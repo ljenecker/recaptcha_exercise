@@ -14,8 +14,12 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/index.html');
 })
 
-app.listen(3000, () => {
-    console.log('Started on port 3000');
+
+
+const PORT = process.env.PORT || 3007;
+
+app.listen(PORT, function () {
+    console.log('App starting on port', PORT);
 });
 
 app.post('/subscribe', (req, res) => {
